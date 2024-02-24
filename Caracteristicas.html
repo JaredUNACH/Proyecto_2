@@ -81,8 +81,8 @@
             <h2>Recursos</h2>
             <ul>
                 <li><a href="https://developer.mozilla.org/es/docs/Web/Progressive_web_apps" target="_blank">https://developer.mozilla.org/es/docs/Web/Progressive_web_apps</a></li>
-                <li><a href="https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/que-es-una-progressive-web-app-pwa/" target="_blank">https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/que-es-una-progressive-web-app-pwa/</a></li>
-                <li><a href="https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/que-es-una-progressive-web-app-pwa/" target="_blank">https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/que-es-una-progressive-web-app-pwa/</a></li>
+                <li><a href="https://www.iebschool.com/blog/progressive-web-apps-analitica-usabilidad/" target="_blank">https://www.iebschool.com/blog/progressive-web-apps-analitica-usabilidad/</a></li>
+                <li><a href="https://blog.hubspot.es/website/que-es-pwa" target="_blank">https://blog.hubspot.es/website/que-es-pwa</a></li>
             </ul>
         </div>
     </div>
@@ -90,39 +90,6 @@
     <div class="footer">
         <p>© 2024 Mi PWA</p>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const sections = document.querySelectorAll('.informacion ul, .Ventajas ul, .Desventajas ul, .conclusion ul, .recursos ul');
-            sections.forEach((section) => {
-                section.style.display = 'none';
-            });
-
-            setTimeout(() => {
-                sections.forEach((section) => {
-                    section.style.display = 'block';
-                });
-                // Ajusta el margen superior del primer elemento después del encabezado
-                document.querySelector('.informacion').style.marginTop = "180px"; 
-            }, 3000);
-        });
-        // Código JavaScript para el efecto 3D
-        document.querySelectorAll('.div3D').forEach(div => {
-            div.addEventListener('mousemove', e => {
-                let rect = e.target.getBoundingClientRect();
-                let x = e.clientX - rect.left;
-                let y = e.clientY - rect.top;
-                let dx = (x - rect.width / 2) / 500;
-                let dy = (y - rect.height / 2) / -500;
-
-                e.target.style.transform = `rotateY(${dx}deg) rotateX(${dy}deg)`;
-            });
-
-            div.addEventListener('mouseleave', e => {
-                e.target.style.transform = '';
-            });
-        });
-   </script>
    <script src="JS/script_caracteristicas.js"></script>
 </body>
 </html>

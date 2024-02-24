@@ -1,4 +1,33 @@
+document.addEventListener('DOMContentLoaded', (event) => {
+    const sections = document.querySelectorAll('.informacion ul, .Ventajas ul, .Desventajas ul, .conclusion ul, .recursos ul');
+    sections.forEach((section) => {
+        section.style.display = 'none';
+    });
 
+    setTimeout(() => {
+        sections.forEach((section) => {
+            section.style.display = 'block';
+        });
+        // Ajusta el margen superior del primer elemento después del encabezado
+        document.querySelector('.informacion').style.marginTop = "180px"; 
+    }, 3000);
+});
+// Código JavaScript para el efecto 3D
+document.querySelectorAll('.div3D').forEach(div => {
+    div.addEventListener('mousemove', e => {
+        let rect = e.target.getBoundingClientRect();
+        let x = e.clientX - rect.left;
+        let y = e.clientY - rect.top;
+        let dx = (x - rect.width / 2) / 450;
+        let dy = (y - rect.height / 2) / -450;
+
+        e.target.style.transform = `rotateY(${dx}deg) rotateX(${dy}deg)`;
+    });
+
+    div.addEventListener('mouseleave', e => {
+        e.target.style.transform = '';
+    });
+});
 //Boton de menu
 document.getElementById('menuButton3').addEventListener('click', function() {
     var dropdown = document.getElementById('dropdown3');
