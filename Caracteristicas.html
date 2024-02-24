@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA</title>
+    <link rel="stylesheet" href="CSS/EtiloCARAC.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="header2">
+        <h1>Aplicaciones Web Progresivas</h1>
+        <button id="menuButton3">☰</button>
+        <div id="dropdown3" class="dropdown-content3">
+            <a href="PWA.html">Ejemplos de PWA</a>
+            <a href="index.html">Inicio</a>
+        </div>
+    </div>
+
+    <div class="div3D">
+        <div class="informacion">
+            <h2>Características de una PWA</h2>
+            <ul>
+                <li>Fiabilidad: Las PWA deben ser rápidas y estar disponibles en todo momento, incluso si no hay conexión a Internet.</li>
+                <li>Rapidez: Las PWA deben ser rápidas y responder rápidamente a las interacciones del usuario.</li>
+                <li>Engagement: Las PWA deben ser atractivas y fáciles de usar.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="divContainer">
+        <div class="div3D">
+            <div class="Ventajas">
+                <h2>Ventajas de las PWA</h2>
+                <ul>
+                    <li>Las PWA son rápidas y fáciles de usar.</li>
+                    <li>Las PWA son fáciles de instalar y no requieren una tienda de aplicaciones.</li>
+                    <li>Las PWA son fáciles de mantener y actualizar.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="div3D">
+            <div class="Desventajas">
+                <h2>Desventajas de las PWA</h2>
+                <ul>
+                    <li>Las PWA no son compatibles con todas las plataformas y navegadores.</li>
+                    <li>Las PWA no pueden acceder a todas las funciones del dispositivo.</li>
+                    <li>Las PWA no pueden enviar notificaciones push en iOS.</li>
+                </ul>
+            </div>
+        </div>
+    </div>    
+    <div class="div3D">
+        <div class="conclusion">
+            <h2>Como crear una (PWA)</h2>
+            <li>Crea una aplicación web: Primero, necesitas una aplicación web para convertir en una PWA</li>
+            <li>Haz que tu aplicación sea responsive: Las PWA deben funcionar bien en cualquier dispositivo, por lo que tu aplicación debe ser responsive.  
+                Esto significa que debe adaptarse a diferentes tamaños de pantalla y orientaciones.</li>
+            </li>
+            <li>
+                Crea un manifiesto de la aplicación web: El manifiesto de la aplicación web es un archivo JSON que proporciona información sobre tu aplicación  
+                (como su nombre, icono, y descripción) y cómo debe comportarse cuando se instala en el dispositivo del usuario.
+            </li>
+            <li>
+                Registra un Service Worker: Los Service Workers son scripts que tu navegador ejecuta en segundo plano, separados de una página web, 
+                abriendo la puerta a características que no necesitan una página web o interacción del usuario. Son la base de las PWA,    
+                ya que permiten características como el trabajo sin conexión y las notificaciones push.
+            </li>
+            <li>
+                Implementa la capacidad de trabajar sin conexión: Utiliza el Service Worker para almacenar en caché los recursos de tu aplicación y servirlos   
+                cuando el usuario está sin conexión. Esto se hace generalmente en el evento install del Service Worker.
+            </li>
+
+            <h2>Conclusión</h2>
+            <p>Las PWA son una forma de proporcionar una experiencia de usuario similar a la de una aplicación nativa utilizando tecnologías web progresivas. 
+                Son rápidas, fáciles de usar, y fáciles de instalar. Sin embargo, no son compatibles con todas las plataformas y navegadores, y no pueden acceder a todas las funciones del dispositivo. 
+                A pesar de estas limitaciones, las PWA son una excelente opción para muchas aplicaciones web.</p>
+        </div>
+    </div>
+    <div class="div3D">
+        <div class="recursos">
+            <h2>Recursos</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/Progressive_web_apps" target="_blank">https://developer.mozilla.org/es/docs/Web/Progressive_web_apps</a></li>
+                <li><a href="https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/que-es-una-progressive-web-app-pwa/" target="_blank">https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/que-es-una-progressive-web-app-pwa/</a></li>
+                <li><a href="https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/que-es-una-progressive-web-app-pwa/" target="_blank">https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/que-es-una-progressive-web-app-pwa/</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 Mi PWA</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const sections = document.querySelectorAll('.informacion ul, .Ventajas ul, .Desventajas ul, .conclusion ul, .recursos ul');
+            sections.forEach((section) => {
+                section.style.display = 'none';
+            });
+
+            setTimeout(() => {
+                sections.forEach((section) => {
+                    section.style.display = 'block';
+                });
+                // Ajusta el margen superior del primer elemento después del encabezado
+                document.querySelector('.informacion').style.marginTop = "180px"; 
+            }, 3000);
+        });
+        // Código JavaScript para el efecto 3D
+        document.querySelectorAll('.div3D').forEach(div => {
+            div.addEventListener('mousemove', e => {
+                let rect = e.target.getBoundingClientRect();
+                let x = e.clientX - rect.left;
+                let y = e.clientY - rect.top;
+                let dx = (x - rect.width / 2) / 500;
+                let dy = (y - rect.height / 2) / -500;
+
+                e.target.style.transform = `rotateY(${dx}deg) rotateX(${dy}deg)`;
+            });
+
+            div.addEventListener('mouseleave', e => {
+                e.target.style.transform = '';
+            });
+        });
+   </script>
+   <script src="JS/script_caracteristicas.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+/* estilos index*/
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #b0e0d2;
+    color: #333;
+}
+
+.encabezado {
+    text-align: center;
+    margin-top: 1px;
+}
+.header {
+    background: url('../Imagenes/pwa-header.png') no-repeat center center scroll; 
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    color: 212529;
+    text-align: center;
+    padding: 100px 0;
+    background-color: #6c757d;
+}
+
+#menuButton1 {
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2; /* El botón del menú está encima de los divs laterales */
+    color: #6c757d;
+}
+
+.dropdown-content1 {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    display: none;
+    background-color: #f8f9fa;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2; /* El contenido del menú desplegable está encima de los divs laterales */
+}
+.dropdown-content1 a {
+    display: block;
+    transition: background 0.3s ease, color 0.3s ease;
+    color: #000;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.dropdown-content1 a:hover {
+    background: #f8f8f8;
+    color: #333;
+}
+@keyframes slideDown {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+}
+
+.dropdown-content1 {
+    animation: slideDown 0.3s ease;
+}
+
+
+.footer {
+    background-color: #5f33b1;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+
+
+.encabezado h1 {
+    animation: bounce 2s infinite;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.imagen {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.imagen img {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: transform 0.2s;
+}
+
+.imagen img:hover {
+    transform: scale(1.1);
+}
+.side-div {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    z-index: 1; /* Los divs laterales están debajo del menú */
+}
+
+
+.pwa-example {
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width: 600px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .imagen img {
+        max-width: 100%;
+    }
+}
+
+
+/* Estilos para PC (pantallas de al menos 900px de ancho) */
+@media (min-width: 900px) {
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .imagen img {
+        max-width: 30%;
+    }
+}
